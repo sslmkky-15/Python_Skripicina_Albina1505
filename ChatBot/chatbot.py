@@ -1,33 +1,33 @@
-bot_name = "Charlie"
-birth_year = "2025"
-print(f"Hello! My name is {bot_name}.")
-print(f"I was created in {birth_year}.")
-print("Please, remind me your name.")
-your_name = input(">")
-print(f"What a great name you have, {your_name}!")
-print("Let me guess your age.")
-print("Enter remainders of dividing your age by 3, 5 and 7.")
-remainder3 = int(input(">"))
-remainder5 = int(input(">"))
-remainder7 = int(input(">"))
-age = (remainder3 * 70 + remainder5 * 21 + remainder7 * 15) % 105
-print(f"Your age is {age}; that's a good time to start programming!")
-print("Now I will prove to you that I can count to any number you want.")
-count_to = int(input(">"))
-for i in range(count_to + 1):
-    print(f"{i}!")
-print("Completed, have a nice day!")
-print("Let's test your programming knowledge.")
-print("Why do we use methods?")
-print("1. To repeat a statement multiple times.")
-print("2. To decompose a program into several small subroutines.")
-print("3. To determine the execution time of a program.")
-print("4. To interrupt the execution of a program.")
-correct_answer = "2"
-user_answer = ""
-while user_answer != correct_answer:
-    user_answer = input("> ")
-    if user_answer != correct_answer:
+
+print("Hello! My name is Alex")
+print("I was created in 2025")
+print("Please, remind me your name")
+name = input()
+print(f"What a greate name you have, {name}!")
+print('Let me guess your age.')
+print('Enter remainders of dividing your age by 3, 5 and 7')
+reainder3 = int(input())
+reainder5 = int( input())
+reainder7 = int(input())
+age = (reainder3*70+reainder5*21+reainder7*15)%105
+print (f'Your age is {age}; that`s a good time to start programming!')
+print('Now I will prove to you I can count ti any number you want')
+numbers = int(input())
+i = 0
+while i <= numbers :
+    print(f'{i}!')
+    i += 1
+print("Let`s test you programming!", "\nWhy do we use methods?",'\n1. To repeat a statement multiple times','\n2. To decompose a program into several small subroutines','\n3. To determine the execution time of a program','\n4. To interrupt the execution of a program')
+while True:
+    try:
+        a = int(input())
+    except ValueError:
+        print("Invalid input. Please enter a number from 1 to 4.")
+        continue
+
+    if a == 2:
+        print('Completed, have a nice day!')
+        break
+    else:
         print("Please, try again.")
-print("Completed, have a nice day!")
 print("Congratulations, have a nice day!")
