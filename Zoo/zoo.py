@@ -1,149 +1,155 @@
+animals = [
+    {
+        "camel": r"""
+The camel habitat...
+ ___.-''''-.
+ /___  @    |
+ ',,,,.     |         _.'''''''._
+      '     |        /           \
+      |     \    _.-'             \
+      |      '.-'                  '-.
+      |                               ',
+      |                                '',
+       ',,-,                           ':;
+            ',,| ;,,                 ,' ;;
+               ! ; !'',,,',',,,,'!  ;   ;:
+              : ;  ! !       ! ! ;  ;   :;
+              ; ;   ! !      ! !  ; ;   ;,
+             ; ;    ! !     ! !   ; ;
+             ; ;    ! !    ! !     ; ;
+            ;,,      !,!   !,!     ;,;
+            /_I      L_I   L_I     /_I
+Look at that!
+"""
+    },
+    {
+        "lion": r"""
+The lion habitat...
+                                               ,w.
+                                             ,YWMMw  ,M  ,
+                        _.---.._   __..---._.'MMMMMw,wMWmW,
+                   _.-""        '''           YP"WMMMMMMMMMb,
+                .-' __.'                   .'     MMMMW^WMMMM;
+    _,        .'.-'"; `,       /`     .--""      :MMM[==MWMW^;
+ ,mM^"     ,-'.'   /   ;      ;      /   ,       MMMMb_wMW"  @\
+,MM:.    .'.-'   .'     ;     `\    ;     `,     MMMMMMMW `"=./`-,
+WMMm__,-'.'     /      _.\      F'''-+,,   ;_,_.dMMMMMMMM[,_ / `=_}
+"^MP__.-'    ,-' _.--""   `-,   ;       \  ; ;MMMMMMMMMMW^``; __|
+           /   .'            ; ;         )  )`{  \ `"^W^`,   \  :
+          /  .'             /  (       .'  /     Ww._     `.  `"
+         /  Y,              `,  `-,=,_{   ;      MMMP`""-,  `-._.-,
+        (--, )                `,_ / `) \/"")      ^"      `-, -;"\:
+The lion is roaring!
+"""
+    },
+    {
+        "deer": r"""
+The deer habitat...
+   /|       |\
+`__\\       //__'
+   ||      ||
+ \__`\     |'__/
+   `_\\   //_'
+   _.,:---;,._
+   \_:     :_/
+     |@. .@|
+     |     |
+     ,\.-./ \
+     ;;`-'   `---__________-----.-.
+     ;;;                         \_\
+     ';;;                         |
+      ;    |                      ;
+       \   \     \        |      /
+        \_, \    /        \     |\
+          |';|  |,,,,,,,,/ \    \ \_
+          |  |  |           \   /   |
+          \  \  |           |  / \  |
+           | || |           | |   | |
+           | || |           | |   | |
+           | || |           | |   | |
+           |_||_|           |_|   |_|
+          /_//_/           /_/   /_/
+Pretty good!
+"""
+    },
+    {
+        "goose": r"""
+The goose habitat...
+
+                                    _
+                                ,-"" "".
+                              ,'  ____  `.
+                            ,'  ,'    `.  `._
+   (`.         _..--.._   ,'  ,'        \    \
+  (`-.\    .-""        ""'   /          (  d _b
+ (`._  `-"" ,._             (            `-(   \
+ <_  `     (  <`<            \              `-._\
+  <`-       (__< <           :
+   (__        (_<_<          ;
+    `------------------------------------------
+Beautiful!
+"""
+    },
+    {
+        "bat": r"""
+The bat habitat...
+_________________               _________________
+ ~-.              \  |\___/|  /              .-~
+     ~-.           \ / o o \ /           .-~
+        >           \\  W  //           <
+       /             /~---~\             \
+      /_            |       |            _\
+         ~-.        |       |        .-~
+            ;        \     /        i
+           /___      /\   /\      ___\
+                ~-. /  \_/  \ .-~
+                   V         V
+It's doing fine.
+"""
+    },
+    {
+        "rabbit": r"""
+The rabbit habitat...
+                                ,
+                               /|      __
+                              / |   ,-~ /
+                             Y :|  //  /
+                             | jj /( .^
+                             >-"~"-v"
+                            /       Y
+                           jo  o    |
+                           ( ~T~     j
+                            >._-' _./
+                           /   "~"  |
+                          Y     _,  |
+                         /| ;-"~ _  l
+                        / l/ ,-"~    \
+                        \ \\/      .- \
+                         Y        /    Y
+                         l       I     !
+                         ]\      _\    /"\
+                        (" ~----( ~   Y.  )
+It looks fine!
+"""
+    }
+]
 print("I love animals!")
 print("Let's check out the animals...")
 print("The deer looks fine.")
 print("The lion looks healthy.")
-camel = r"""
-The camel habitat...
-  /--
- / @
-' :;
-! ;
-| !
-| |
-| !
-| :;
-| !
-:; :;
-!!
-!!
-!!
-!!
-!!
-!!
-!,!
-!,!
-! !
-! /_I
-LI
-LI
-/_I
-Look at that!"""
-
-lion = r"""
-The lion habitat...
-w.
-,YWMMW M
-'MMMMMW, WMWMW,
-YP"WMMMммммммь,
-MMMMWWMMMM;
-:MMM[==MWMW^;
-,mM^"
-,MM:.
-;
-MMMMb WMW" @\
-MMMMMMMW "=./
-WMMm
-"AMP
-/
-F
-dMMMMMMMM,_/ =_}
-;
-;;MMMMMMMMMMW^^;
-) ) { `"^W^
-\ ( /
-Ww.
-/ Y,
-;
-MMMP"1
-(--,)
-/ `) \"")
-Al
-`-, -;"\:
-The lion is roaring!"""
-
-deer = """
-The deer habitat...
-/1
-
-//
-11
-11
-1.1
-//_
----
-\:
-:/
-  ..@ 
- .-./\
-;; -'
-;;;
-\\
-1
-;
-/
-IN
-....../
-Pretty good!"""
-
-goose = r"""
-The goose habitat...
-(.
- (-.
- (.
- <_
- <_
- <_
- <_
- <_
- <_
- <<
- <<
- (_<_<
-Beautiful!"""
-
-bat = r"""
-The bat habitat...
-  /\   "~"  |
-  Y
- / |\;-"~    |
-/ |\,,-"~   /
-\/ /\     .-'
- Y       /
- |      I
- ]\     I
- (" ~~~~~---( ~  Y. )
-It's doing fine."""
-
-rabbit = r"""
-The rabbit habitat...
-  /1    /1
-  /1    /1
- Y :|  ///
- | jj/(.^
- >-"~"-"p"
-  /     Y
- jo  o  |
- (~T~   j
- >. -'  ./
- / \/
-/ |   "~"  |
- Y
-/ |\;-"~    |
-/ |\,,-"~   /
-\/ /\     .-'
- Y       /
- |      I
- ]\     I
- (" ~~~~~---( ~  Y. )
-It looks fine!"""
-animals = [camel, lion, deer, goose, bat, rabbit]
+print("")
 while True:
-    user_input = input("Please enter the number of the habitat you would like to view: > ")
-    if user_input.lower() == "exit":
-        animal_index = int(user_input)
-        if 0 <= animal_index < len(animals):
-          print("animals[animal_index]")
+    message = input("Please enter the number of the habitat you would like to view or enter 'exit':" ).strip().lower()
+    if message == "exit":
+        break
+    if message.isdigit():
+        num = int(message)
+        if 0 <= num < len(animals):
+            animal = animals[num]
+            ascii_art = list(animal.values())[0]
+            print(ascii_art)
         else:
-            print("Invalid number. Please enter a number between 0 and " + str(len(animals) - 1) + ".")
-        print("Invalid input. Please enter a number or 'exit'.")
-        print("See you later!")
+            print("There is no such number!")
+    else:
+        print("Enter a number or 'exit'!")
+print("See you later! ")
