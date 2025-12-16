@@ -1,118 +1,59 @@
 import random
 
-PROGRAMMING_LANGUAGES = ['swift', 'golang', 'rust', 'ruby', 'kotlin', 'python', 'java']
+def play_game():
+    words = ['python', 'java', 'javascript', 'php']
+    word = random.choice(words)
+    hidden_word = ['-' for _ in word]
+    attempts = 8
+    guessed_letters = set()
 
-MAX_MISTAKES = 7
+    while attempts > 0:
+        print()
+        print(''.join(hidden_word))
+        letter = input('Input a letter: > ').strip()
 
-def pick_secret_word():
-
-    return random.choice(PROGRAMMING_LANGUAGES)
-
-def initialize_display_word(secret_word):
-
-    word_length = len(secret_word)
-    if word_length <= 3:
-
-        return ['-'] * word_length
-
-    initial_view = list(secret_word[:3]) + ['-'] * (word_length - 3)
-    return initial_view
-
-
-def show_current_progress(displayed_list):
-    print(' '.join(displayed_list))
-
-
-def uncover_letters(target_word, current_view, guess_char):
-
-    newly_revealed = 0
-    for idx, char in enumerate(target_word):
-
-        if char == guess_char and current_view[idx] == '-':
-            current_view[idx] = guess_char
-            newly_revealed += 1
-    return newly_revealed
-
-
-def check_input_validity(user_input):
-
-    if len(user_input) != 1:
-        print("Enter only one letter!")
-        return False
-    if not user_input.islower() or not user_input.isalpha():
-        print("Please enter a lowercase English letter (a-z).")
-        return False
-    return True
-
-def start_new_round():
-
-    secret_word = pick_secret_word()
-    current_display = initialize_display_word(secret_word)
-
-    if '-' not in current_display:
-        print("\nYou have already guessed the word: ")
-        show_current_progress(current_display)
-        print("Incredible! You won from the first step!")
-        return
-
-    mistakes_count = 0
-    used_letters = set()
-
-    while True:
-        print("\n" + "=" * 30)
-        show_current_progress(current_display)
-        print(f"Remaining attempts: {MAX_MISTAKES - mistakes_count}")
-        print(f"Letters used: {', '.join(sorted(list(used_letters)))}")
-        print("=" * 30)
-
-        guess = input("Your letter: ").strip()
-
-        if not check_input_validity(guess):
+        if len(letter) != 1:
+            print('You should input a single letter')
+            continue
+        if not letter.isalpha() or not letter.islower():
+            print('Please enter a lowercase English letter')
+            continue
+        if letter in guessed_letters:
+            print("You've already guessed this letter")
             continue
 
-        if guess in used_letters:
-            print("You have already named this letter. Try another one.")
-            continue
+        guessed_letters.add(letter)
 
-        used_letters.add(guess)
+        if letter in word:
+            if letter in hidden_word:
+                print('No improvements')
+            else:
+                for i in range(len(word)):
+                    if word[i] == letter:
+                        hidden_word[i] = letter
+        else:
+            print("That letter doesn't appear in the word")
+            attempts -= 1
 
-        if guess not in secret_word:
-            print(f"Unfortunately, the letter '{guess.upper()}' is missing from the word.")
-            mistakes_count += 1
-            if mistakes_count >= MAX_MISTAKES:
-                print("\nAll attempts have been exhausted!")
-                print(f"The word was: **{secret_word}**")
-                return
-            continue
-
-        revealed_now = uncover_letters(secret_word, current_display, guess)
-
-        if revealed_now == 0:
-
-            print("This letter was already known.")
-            continue
-
-        if '-' not in current_display:
-            print(f"\nCongratulations! You guessed the word! **{secret_word}**!")
-            show_current_progress(current_display)
-            print("You are saved!")
+        if '-' not in hidden_word:
+            print(f'You guessed the word {word}!')
+            print('You survived!')
             return
 
-def run_game_manager():
+    print('You lost!')
 
-    print("HANGMAN")
-    print("Try to guess the word before you run out of attempts!")
 
+def main():
+    print('HANGMAN')
     while True:
-        command = input('\nEnter "play" to start, "exit" to finish: ').strip().lower()
-        if command == "play":
-            start_new_round()
-        elif command == "exit":
-            print("Thanks for playing! See you later.")
+        command = input('Type "play" to play the game, "exit" to quit: > ').strip()
+        if command == 'play':
+            play_game()
+        elif command == 'exit':
             break
         else:
-            print("Unknown command. Try 'play' or 'exit'.")
             continue
 
-if __name__ == "__main__":
-    run_game_manager()
+
+if __name__ == '__main__':
+    main()
