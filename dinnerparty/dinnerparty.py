@@ -8,10 +8,12 @@ while True:
         num_friends = int(input('> '))
         if num_friends <= 0:
             print("No one is joining for the party.")
+          
             exit() 
         break
     except ValueError:
         print("Invalid input. Please enter a whole number (e.g., 5).")
+
 print("Please, enter the name of every friend, one by one:")
 
 friends = {}
@@ -32,6 +34,7 @@ while True:
         break
     except ValueError:
         print("Invalid input. Please enter a numeric value (e.g., 100.50).")
+
 print('Do you want to use the "Who is lucky?" feature? (Yes/No)')
 answer = input().strip().capitalize() # Додано очистку тексту (напр. "yes " -> "Yes")
 
@@ -43,6 +46,7 @@ if answer == "Yes":
         split_amount = round(total_amount / (num_friends - 1), 2)
     else:
         split_amount = 0 # Якщо ти один, то "lucky" означає безкоштовно? :)
+
     for friend in friends:
         if friend == lucky_one:
             friends[friend] = 0
