@@ -87,6 +87,7 @@ class CoffeeMachine:
             self.state = "choosing_action"
             print("\nWrite action (buy, fill, take, remaining, exit):")
 
+
         elif self.state == "filling_water":
             self.water += int(user_input)
             self.state = "filling_milk"
