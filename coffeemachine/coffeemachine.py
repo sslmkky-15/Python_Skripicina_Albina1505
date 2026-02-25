@@ -7,6 +7,7 @@ class CoffeeMachine:
         self.cups = 9
         self.money = 550
 
+
         self.state = "choosing_action"
         print("Write action (buy, fill, take, remaining, exit):")
 
@@ -106,6 +107,7 @@ class CoffeeMachine:
             print("\nWrite action (buy, fill, take, remaining, exit):")
 
         return True
+
 
 machine = CoffeeMachine()
 while True:
