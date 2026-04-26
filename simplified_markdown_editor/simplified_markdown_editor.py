@@ -40,10 +40,10 @@ def main():
         elif choice == 'link':
             label = input("Label: ")
             url = input("URL: ")
-            text_buffer += f"[{label}]({url})"
+            text_buffer += f"\n {label} "
 
         elif choice == 'new-line':
-            text_buffer += "\n"
+            text_buffer += "\n\n"
 
         elif choice in ['ordered-list', 'unordered-list']:
             while True:
@@ -58,10 +58,14 @@ def main():
 
             for i in range(1, rows + 1):
                 row_text = input(f"Row #{i}: ")
-                if choice == 'ordered-list':
-                    text_buffer += f"{i}. {row_text}\n"
-                else:
-                    text_buffer += f"* {row_text}\n"
+            text_buffer += f"\n\n"
+            if choice == 'ordered-list':
+                text_buffer += f"{i}. {row_text}\n"
+            else:
+                text_buffer += f"* {row_text}\n"
+            text_buffer += f"\n"
+
+
 
         elif choice == 'plain':
             text = input("Text: ")
