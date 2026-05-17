@@ -8,13 +8,12 @@ class RockPaperScissors:
     STATE_PLAY = "PLAY"
     STATE_EXIT = "EXIT"
 
-    def init(self, rating_file: str = "rating.txt"):
+    def __init__(self, rating_file: str = "rating.txt"):
         self.rating_file = rating_file
         self.name = ""
         self.rating = 0
         self.options = self.DEFAULT_OPTIONS.copy()
         self.state = self.STATE_WAIT
-
 
     def load_rating(self) -> None:
         try:
@@ -39,16 +38,22 @@ class RockPaperScissors:
         print("!start  - start game")
         print("!rating - show rating")
         print("!exit   - quit")
-        print("Before start you can input custom options separated by command.")
+        print("Before start you can input custom options separated by comma.")
 
-
-    def set_options(self, raw: str) -> None:
+    def set_options(self, raw: str) -> bool:
         raw = raw.strip()
         if raw == "":
             self.options = self.DEFAULT_OPTIONS.copy()
+            return True
         else:
-            self.options = [x.strip() for x in raw.split(",")]
+            new_options = [x.strip() for x in raw.split(",")]
 
+            if len(new_options) < 3:
+                print("Invalid input. Please provide at least 3 options.")
+                return False
+
+            self.options = new_options
+            return True
 
     def get_computer_choice(self) -> str:
         return random.choice(self.options)
@@ -73,40 +78,32 @@ class RockPaperScissors:
             print(f"Well done. The computer chose {computer_choice} and failed")
             self.rating += 100
 
-
     def handle_wait_state(self, user_input: str):
         if user_input == "!help":
             self.print_help()
-
         elif user_input == "!rating":
             print(f"Your rating: {self.rating}")
-
         elif user_input == "!exit":
             print("Bye!")
             self.state = self.STATE_EXIT
-
         elif user_input == "!start":
             print("Okay, let's start")
             self.state = self.STATE_PLAY
-
         else:
-            self.set_options(user_input)
-            print("Options updated.")
+
+            if self.set_options(user_input):
+                print("Options updated.")
 
     def handle_play_state(self, user_input: str):
         if user_input == "!exit":
             print("Bye!")
             self.state = self.STATE_EXIT
-
         elif user_input == "!rating":
             print(f"Your rating: {self.rating}")
-
         elif user_input in self.options:
             self.process_round(user_input)
-
         else:
             print("Invalid input")
-
 
     def run(self):
         self.setup_player()
@@ -120,7 +117,6 @@ class RockPaperScissors:
                 self.handle_play_state(user_input)
 
 
-
-if name == "main":
+if __name__ == "__main__":
     game = RockPaperScissors()
     game.run()
