@@ -3,6 +3,7 @@ def show_help():
     print("Special commands: !help !done")
 
 def main():
+    global row_text
     formatters = ['plain', 'bold', 'italic', 'header', 'link', 'inline-code', 'ordered-list', 'unordered-list', 'new-line']
     special_commands = ['!help', '!done']
     text_buffer = ""
@@ -55,10 +56,10 @@ def main():
                         print("The number of rows should be greater than zero.")
                 except ValueError:
                     print("The number of rows should be greater than zero.")
-
+            text_buffer += f"\n\n"
             for i in range(1, rows + 1):
                 row_text = input(f"Row #{i}: ")
-            text_buffer += f"\n\n"
+
             if choice == 'ordered-list':
                 text_buffer += f"{i}. {row_text}\n"
             else:
